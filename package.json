@@ -4,6 +4,8 @@
   "description": "AngularJS 1.x starter kit",
   "main": "index.js",
   "scripts": {
+    "start": "npm run serve",
+    "serve": "grunt serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/oriolpuig/angular-starter-kit/issues"
   },
-  "homepage": "https://github.com/oriolpuig/angular-starter-kit#readme"
+  "homepage": "https://github.com/oriolpuig/angular-starter-kit#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.0",
+    "jit-grunt": "^0.10.0"
+  }
 }
