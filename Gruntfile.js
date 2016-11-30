@@ -6,6 +6,30 @@ module.exports = function (grunt) {
     var portServe = 3000;
 
     grunt.initConfig({
+        browserify: {
+            dev: {
+                files: {
+                    '.tmp/bundle.js': [appCodeName + '/index.js']
+                },
+                options: {
+                    watch: true,
+                    browserifyOptions: { debug: true },
+                    transform: [
+                        'hintify',
+                        ['stringify', { 'extensions': ['.html'] }],
+                        'browserify-ngannotate',
+                        'envify'
+                    ]
+                }
+            }
+        },
+        clean: {
+            tmp: {
+                files: [
+                    { dot: true, src: ['.tmp'] }
+                ]
+            }
+        },
         connect: {
             options: {
                 open: true,
@@ -14,10 +38,10 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    base: [appCodeName]
+                    base: ['.tmp', appCodeName, '.']
                 }
             }
-        },
+        },      
         watch: {
             grunt: {
                 files: ['Gruntfile.js']
@@ -27,13 +51,17 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    appCodeName + '/index.html'
+                    appCodeName + '/index.html',
+                    appCodeName + '/**/*.{png,gif,jpg,svg}',
+                    '.tmp/bundle.*', '.tmp/bundle.css'
                 ]
             }
         }
     });
 
     grunt.registerTask('serve', [
+        'clean',
+        'browserify:dev',
         'connect:livereload',
         'watch'
     ]);

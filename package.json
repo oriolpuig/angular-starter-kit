@@ -27,9 +27,19 @@
   },
   "homepage": "https://github.com/oriolpuig/angular-starter-kit#readme",
   "devDependencies": {
+    "browserify-ngannotate": "^2.0.0",
+    "envify": "^4.0.0",
     "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
-    "jit-grunt": "^0.10.0"
+    "hintify": "^0.1.0",
+    "jit-grunt": "^0.10.0",
+    "stringify": "^5.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.9"
   }
 }
