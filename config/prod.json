@@ -1,0 +1,9 @@
+{
+    "GLOBAL_SETTINGS": {
+        "API": {
+            "API_KEY": "",
+            "API_BASE_URL": "",
+            "API_VERSION": ""
+        }
+    }
+}

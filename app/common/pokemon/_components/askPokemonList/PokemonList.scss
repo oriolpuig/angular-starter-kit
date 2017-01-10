@@ -1,0 +1,42 @@
+.PokemonListComponent {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    > * {
+        flex: 1 100%;
+    }
+
+    > .component-list {
+        display: flex;
+        flex-flow: row wrap;
+
+        .PokemonListItemComponent {
+            // margin: 5px;
+        }
+    }
+}
+
+@media all and (max-width: $screen-desktop){
+    .component-list {
+        > * {
+            flex: 1 100%;
+        }
+    }   
+}
+
+@media (min-width: $screen-desktop){
+    .component-list {
+        > * {
+            flex: 3 50%;
+        }
+    }   
+}
+
+@media (min-width: $screen-lg-desktop){
+    .component-list {
+        > * {
+            flex: 3 33.33%;
+        }
+    }   
+}

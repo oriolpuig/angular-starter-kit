@@ -1,0 +1,13 @@
+<div class="PokemonListComponent">
+    <div class="component-header" ng-show="$ctrl.showTitle">
+        <h2 ng-bind="::$ctrl.Title"></h2>
+    </div>
+    <div class="pagination">
+        <input type="button" value="Previous" class="btn btn-lg btn-previous" ng-disabled="!$ctrl.previous" />
+        <input type="button" value="Next" class="btn btn-lg btn-next" ng-disabled="!$ctrl.next" />
+    </div>
+    <div class="component-list ">
+        <ask-pokemon-list-item ng-repeat="pokemon in $ctrl.pokemons track by $index " pokemon-name="pokemon.name
+            " pokemon-url="pokemon.url "></ask-pokemon-list-item>
+    </div>
+</div>

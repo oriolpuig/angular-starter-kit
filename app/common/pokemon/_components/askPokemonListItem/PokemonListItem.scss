@@ -1,0 +1,44 @@
+.PokemonListItemComponent {
+    position: relative;
+    order: 1;
+    border: 1px solid $gray-lighter;
+    border-radius: 4px;
+    padding: 15px;
+    min-height: 96px;
+    box-shadow: 4px 4px 5px 0px rgba(119,119,119,0.7);
+    margin: 5px;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    > * {
+        flex: 2 auto;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background: $gray-lighter;
+    }
+    
+    .id-box {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+    }
+
+    .img-box {
+        max-width: 96px;
+        max-height: 96px;
+        margin-right: 5px;
+    }
+
+    .description-box {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+
+        > * {
+            flex: 1 100%;
+        }
+    }
+}
